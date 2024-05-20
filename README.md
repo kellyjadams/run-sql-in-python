@@ -1,6 +1,6 @@
 # Connect Python to Database
 
-Python code to connect to a postgresql and bigquery database.
+Python code to connect to a postgresql or bigquery database.
 
 1. [Connect to PostgreSQL](postgresql.py)
 2. [Connect to BigQuery](bigquery.py)
