@@ -39,7 +39,6 @@ try:
     df = pd.read_sql_query(query, engine)
     
     # Print query results
-    print("Query results:")
     print(df)
 
 except Exception as e:
