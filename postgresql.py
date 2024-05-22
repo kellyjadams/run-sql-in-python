@@ -30,13 +30,13 @@ db_uri = f"postgresql+psycopg2://{conn_params['user']}:{conn_params['password']}
 engine = create_engine(db_uri)
 
 try:
-    # Execute SQL query using SQLAlchemy engine
+    # Execute SQL query using SQLAlchemy engine with parameterization
     query = """
         SELECT id, timestamp
         FROM customers
-        WHERE timestamp::date = '2024-05-14'
+        WHERE timestamp::date = %(date)s
         """
-    df = pd.read_sql_query(query, engine)
+    df = pd.read_sql_query(query, engine, params={'date': '2024-05-14'})
     
     # Print query results
     print(df)
@@ -44,3 +44,4 @@ try:
 except Exception as e:
     # Handle any exceptions
     print("An error occurred:", e)
+
