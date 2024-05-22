@@ -8,7 +8,6 @@ client = bigquery.Client()
 query = """
     SELECT id, timestamp 
     FROM `project-id-123.database-name.customers`
-    LIMIT 100
 """
 
 try:
@@ -16,7 +15,6 @@ try:
     df = query_job.to_dataframe()
 
     # Print DataFrame
-    print("Query results:")
     print(df)
 
 except Exception as e:
